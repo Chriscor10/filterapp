@@ -116,6 +116,10 @@ if (value){
         priceRange.value = maxPrice
         priceValue.textContent = "$" + maxPrice
 
+        priceRange.addEventListener("input", (e) => {
+            priceValue.textContent = "$" + e.target.value;
+            displayProducts(data.filter((item) => item.price <= e.target.value));
+        })
     };
 
 
